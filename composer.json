@@ -1,7 +1,7 @@
 {
-  "name": "corcel/acf",
+  "name": "alanablett/corcel-acf",
   "description": "Advanced Custom Field (ACF) plugin for Corcel",
-  "homepage": "http://github.com/corcel/acf",
+  "homepage": "https://github.com/alanablett/corcel-acf",
   "license": "MIT",
   "authors": [
     {
@@ -11,8 +11,8 @@
     }
   ],
   "require": {
-    "php": ">=7.2",
-    "jgrossi/corcel": "^4.0|^5.0"
+    "php": ">=8.0",
+    "jgrossi/corcel": "^4.0|^5.0|^6.0|^7.0|^8.0"
   },
   "require-dev": {
     "phpunit/phpunit": "^8.4|^9.0"

@@ -2,6 +2,7 @@
 
 namespace Corcel\Acf\Field;
 
+use App\PostTypes\As3cfItem;
 use Corcel\Model\Post;
 use Corcel\Model\Meta\PostMeta;
 use Corcel\Acf\FieldInterface;
@@ -90,6 +91,11 @@ class Image extends BasicField implements FieldInterface
         $this->mime_type = $attachment->post_mime_type;
         $this->url = $attachment->guid;
         $this->description = $attachment->post_excerpt;
+
+        $s3item = As3cfItem::where('source_id', $attachment->ID)->first();
+        if($s3item) {
+            $this->url = "https://{$s3item->bucket}.s3.{$s3item->region}.amazonaws.com/{$s3item->path}";
+        }
     }
 
     /**
